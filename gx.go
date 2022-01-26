@@ -7,8 +7,20 @@
 
 package gx
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-func Log(msg string) {
+func Log(msg string) error {
+	if msg == "" {
+		return errors.New("Log expects a non-empty parameter type string")
+	}
 	fmt.Println(msg)
+	return nil
+}
+
+func Hello(name string) string {
+	msg := fmt.Sprintf("Hi, %v. Welcome!", name)
+	return msg
 }
