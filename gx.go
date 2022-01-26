@@ -12,6 +12,7 @@ import (
 	"fmt"
 )
 
+// Logs a message to the console
 func Log(msg string) error {
 	if msg == "" {
 		return errors.New("Log expects a non-empty parameter type string")
